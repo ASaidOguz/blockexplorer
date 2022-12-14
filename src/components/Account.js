@@ -52,8 +52,8 @@ export default function Account({alchemy}) {
         <div className='card'><strong>Balance:</strong>&nbsp;{(account)}&nbsp; ETH</div>
         <div className='App'><strong><h2>=Token Balances=</h2></strong></div>
         {!assets&&<div className='App'><strong>Loading for Tokens Pls Wait...</strong></div>}
-        {assets&&<div className='card'>{assets.map((asset)=><div>
-        <strong>Asset Name:</strong>&nbsp;&nbsp;{asset.metadata.name}&nbsp;&nbsp;
+        {assets&&<div className='card'>{assets.map((asset,index)=><div>
+        <strong>{index+1}..Asset Name:</strong>&nbsp;&nbsp;{asset.metadata.name}&nbsp;&nbsp;
         <strong>Asset Balance:</strong>&nbsp;&nbsp;{asset.balance}&nbsp;&nbsp;
         <strong>Asset Symbol:</strong>&nbsp;&nbsp;{asset.metadata.symbol}&nbsp;&nbsp;</div>)}</div>}
 
