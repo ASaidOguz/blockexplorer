@@ -9,6 +9,7 @@ import Main from './components/Main';
 import './style.css'
 import OneTransaction from './components/OneTransaction';
 import Account from './components/Account';
+import Header from './components/Header';
 
 
 // Refer to the README doc for more information about using API
@@ -32,11 +33,8 @@ function App() {
   const [block,setBlock]=useState({})
   return(
     <>
+    <Header/>
     
-    <nav>
-      <div className='App'><NavLink to='/'>Main Page</NavLink></div>
-      <div className='App'><NavLink to='/contact'>Contact</NavLink></div>
-    </nav>
     <Routes>
       <Route path='/' element={<Main blockNumber={blockNumber}
                                setBlockNumber={setBlockNumber}

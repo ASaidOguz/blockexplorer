@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import BlockIcon from './icons/BlockIcon';
 import Miner from './Miner';
 import Transactions from './Transactions';
+import CopyToClipboard from 'react-copy-to-clipboard'
 
 export default function Main({blockNumber,setBlockNumber,alchemy}) {
   
@@ -25,10 +26,10 @@ export default function Main({blockNumber,setBlockNumber,alchemy}) {
       <div ><h2>Latest Block Numbers</h2></div>
       <div className='main'>
       {blockNos.map((blockno)=><div className='card'><BlockIcon/>Block Number:<Link to={'/block/'+`${blockno}`} 
-                       > {blockno}</Link>&nbsp;&nbsp;
+                       > {blockno}</Link>&nbsp;<CopyToClipboard text={blockno}><button className='btn'>c</button></CopyToClipboard>
+                       &nbsp;
                        <Miner blockno={blockno}
                               alchemy={alchemy}
-                              
                               /></div>)}
       </div>
      
